@@ -1,0 +1,60 @@
+{
+ "note": "1D network water balance per run. Volume in m3. 'source' gives the artefact the number was read from: the SWMM report (Node Flooding Summary) or the coupling export check.",
+ "runs": {
+  "0627": {
+   "source": "swmm_20250627_base.rpt",
+   "rpt_bytes": 2228500,
+   "overflow_volume_m3": 22932.0,
+   "n_flooding_nodes": 1932
+  },
+  "0730": {
+   "source": "swmm_20250730_base.rpt",
+   "rpt_bytes": 2130004,
+   "overflow_volume_m3": 30912.0,
+   "n_flooding_nodes": 755
+  },
+  "0719": {
+   "source": "export_check_20260719.json",
+   "rpt_bytes": 183247,
+   "overflow_volume_m3": 69992.0,
+   "outfall_export_volume_m3": 22066.4,
+   "pumped_volume_m3": 2567.2,
+   "n_flooding_nodes": 1797
+  },
+  "0809": {
+   "source": "swmm_20260809_base.rpt",
+   "rpt_bytes": 2183967,
+   "overflow_volume_m3": 70575.0,
+   "n_flooding_nodes": 1415
+  }
+ },
+ "coupling_export_check_20260719": {
+  "rows": [
+   {
+    "tag": "base",
+    "n": 1797,
+    "hours": 29.933333333333334,
+    "flood_m3": 69991.95517909783,
+    "export_m3": 22066.379764508496,
+    "pump_m3": 2567.1680308566283,
+    "pump_on_min": 417.0,
+    "pump_mean_cms": 0.10260440675152452
+   },
+   {
+    "tag": "return_HEAD_full_i0",
+    "n": 1797,
+    "hours": 29.933333333333334,
+    "flood_m3": 117978.45208305943,
+    "export_m3": 26755.238442200105,
+    "pump_m3": 3174.01254085557,
+    "pump_on_min": 551.0,
+    "pump_mean_cms": 0.09600743518520899
+   }
+  ],
+  "injected_m3": 37281.0,
+  "d_flood": 47986.4969039616,
+  "d_export": 4688.858677691609,
+  "amplification": 1.2871569138156593,
+  "export_recovery": 0.12577073248280918
+ }
+}

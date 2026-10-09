@@ -18,7 +18,8 @@ flood modelling: event dependence, identifiability and decision consequences*
 - **Program language**: Python 3; SWMM 5.2 input files
 - **Program size**: ≈ 6.1 kLOC across 29 scripts
 - **Availability and cost**: free, MIT licence; archived at
-  **https://github.com/…** *(to be completed)*, DOI **10.5281/zenodo.XXXXXX** *(to be completed)*
+  **https://github.com/sunglowmh/dual-drainage-exchange-closure** (version v1.0.1).
+  The repository is the archive of record.
 
 ## What maps to what (paper → code)
 
@@ -65,16 +66,34 @@ python scripts/couple_2way.py 20260719 0 oneway        # one-way, full window
 - `data/swmm_v7_50a.inp` — the 3 277-node model template (design storm 50 a);
   all event and family members are derived from it by the scripts above.
 - `data/swmm_20260719_base.inp` — the 2026-07-19 observed-event model.
-- `data/station_nodes.json` — sensor-to-node metadata (names, coordinates,
-  matching distance 1.8–2.3 m). **Author check before publication**: contains
-  station location descriptions; no raw measurements.
+- `data/station_nodes.json` — sensor-to-node metadata (station identifiers,
+  coordinates, matching distance 1.8–2.3 m); derived quantities only, no raw
+  measurements.
 - The 1-min rain-gauge and manhole-level sensor records are **not included**:
   they are owned by the campus facilities operator and were provided under a
   data-sharing agreement that permits analysis and publication of derived
   quantities but not redistribution of the raw series (Option C, declared in
   the manuscript's Software and data availability section). Aggregated event
   statistics sufficient to reproduce the calibration and the audit are shipped
-  with the Zenodo archive.
+  with the repository under `data/aggregates/` (see below).
+
+## Archive contents (`data/aggregates/`)
+
+Aggregated event statistics — no raw sensor series. See
+`data/aggregates/MANIFEST.md` for the full list.
+
+- `e1_grid_per_event.json` — per-event, per-level composite score, RMSE, r and
+  peak-timing offset over the 9-area grid (Fig. 3; Table S4 row 1)
+- `e1_four_criteria.json` — per-event optimum under four criteria + transfer-cost
+  matrix (Section 4.1)
+- `e1_four_levels.json`, `e1_weight_sensitivity.json`, `e1_manhole_subset.json`
+  — E1 robustness variants (Table S4)
+- `observation_audit_per_station.json` — per-station observation-audit metrics
+- `alarm_log_audit.json` — alarm-log audit (counts, gaps, truncated peaks)
+- `water_balance_per_run.json` — per-run 1D network water balance
+
+The script and run identifier behind every reported number are listed in
+Supplementary Material S1.
 
 ## Known environment note
 
