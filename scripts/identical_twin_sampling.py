@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""ORACLE -- is the closure selection limited by SAMPLING or by the NOISE FLOOR?
+"""identical-twin -- is the closure selection limited by SAMPLING or by the NOISE FLOOR?
 
 Synthetic identifiability test.  The 1D model output is taken as truth, sampled
 and perturbed, and we ask whether the configuration that generated the data is
@@ -12,7 +12,7 @@ Plus the quantity that actually matters for the paper: the BETWEEN-CONFIGURATION
 signal (difference in the metric) versus the sensor noise, i.e. a minimum
 detectable difference.
 
-Writes output/ORACLE_采样与噪声分辨力.md.
+Writes output/identical-twin_采样与噪声分辨力.md.
 """
 import datetime as dt
 import json
@@ -82,7 +82,7 @@ def score(truth, ev, lo, hi, dt_min, sigma=0.0, offset=0.0, reps=1):
 
 
 def main():
-    L = ["# ORACLE：闭合选择是受**采样**限制还是受**噪声地板**限制？", "",
+    L = ["# identical-twin：闭合选择是受**采样**限制还是受**噪声地板**限制？", "",
          "> 合成辨识性实验：以 1D 模型输出为真值，按不同采样与噪声生成伪观测，",
          "> 问\"生成数据的那一档能否被认出来\"。站点取该事件在评估窗内有过程的全部站。", ""]
     out = {}
@@ -168,8 +168,8 @@ def main():
           "> 诚实说明：本节推翻了评审意见初稿的假设（\"瓶颈是采样设计\"）。"
           "实验先做了采样轴，发现无噪声时 120 min 仍可辨识，才补做噪声轴——"
           "**结论以实测为准，已同步更正评审意见。**"]
-    open(OUT + "/ORACLE_采样与噪声分辨力.md", "w", encoding="utf-8").write("\n".join(L) + "\n")
-    json.dump(out, open(os.path.join(ROOT, "work", "oracle_sampling.json"), "w"),
+    open(OUT + "/identical-twin_采样与噪声分辨力.md", "w", encoding="utf-8").write("\n".join(L) + "\n")
+    json.dump(out, open(os.path.join(ROOT, "work", "identical_twin_sampling.json"), "w"),
               indent=1, ensure_ascii=False)
     print("\n".join(L))
 

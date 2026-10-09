@@ -7,7 +7,8 @@ flood modelling: event dependence, identifiability and decision consequences*
 ## Software (EMS template fields)
 
 - **Name**: dual-drainage exchange-closure test suite
-- **Developer and contact information**: *(to be completed: author names, corresponding author, e-mail)*
+- **Developer and contact information**: Maohui Zheng, Tongji University
+  (zmh@tongji.edu.cn; authors: M. Zheng, C. Liu, K. Zhang)
 - **First available**: 2026
 - **Hardware required**: any x86-64 workstation; all SWMM runs are single-node;
   the two-dimensional solver is single-process (each run of the 13.7 h 0719
@@ -15,7 +16,7 @@ flood modelling: event dependence, identifiability and decision consequences*
 - **Software required**: US EPA SWMM engine via pyswmm 2.x / swmm-toolkit 0.17;
   Python ≥ 3.10 with NumPy, SciPy, matplotlib (see `requirements.txt`)
 - **Program language**: Python 3; SWMM 5.2 input files
-- **Program size**: ≈ 5.7 kLOC across 26 scripts
+- **Program size**: ≈ 6.1 kLOC across 29 scripts
 - **Availability and cost**: free, MIT licence; archived at
   **https://github.com/…** *(to be completed)*, DOI **10.5281/zenodo.XXXXXX** *(to be completed)*
 
@@ -28,8 +29,11 @@ flood modelling: event dependence, identifiability and decision consequences*
 | Two-dimensional diffusive-wave solver | `scripts/solver2d.py` |
 | One-way / two-way coupling (closures, E3/E4 scenarios) | `scripts/couple_2way.py`, `scripts/node_head_series.py` |
 | Metrics, observation audit helpers | `scripts/metrics_lib.py` |
+| E1 robustness (Table S4): four-criterion transfer costs | `scripts/e1_four_criteria_matrix.py` |
+| E1 robustness (Table S4): composite-score weight sensitivity | `scripts/e1_weight_sensitivity.py` |
+| E1 robustness (Table S4): manhole-only ponding-area sensitivity | `scripts/e1_manhole_subset_sensitivity.py`, `data/node_symbol_class.json` |
 | E1 equivalent-area inversion (A_eff) | `scripts/eval_aponded.py` |
-| E2 identical-twin identifiability audit | `scripts/oracle_sampling.py` |
+| E2 identical-twin identifiability audit | `scripts/identical_twin_sampling.py` |
 | E3 controlled load family (13 design storms + load probes) | `scripts/_M6_build_family.py`, `_M6_build_loadprobe.py`, `_M6_build_dur.py`, `_M6_build_probe.py`, `_M6_final.py` |
 | Conceptual networks N1–N3 (cross-system replication) | `scripts/_M7_nets.py`, `scripts/_M7_family.py` |
 | Figures 1–8 | `scripts/figstyle.py`, `scripts/fig1_framework.py` … `scripts/fig8_M7_networks.py` |
