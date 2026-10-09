@@ -13,6 +13,8 @@ and no raw model output, only per-event / per-run summary quantities.
 | `e1_manhole_subset.json` | E1 repeated with the ponded area applied only to the 1 414 inspection-manhole nodes | Table S4 row 3 |
 | `observation_audit_per_station.json` | Per-station observation-audit metrics (n, RMSE, r, NSE, observed/simulated peaks) per event and configuration | Section 3.4; Section 4.2 |
 | `alarm_log_audit.json` | Alarm-log audit: alarm counts by type, logging gaps, truncated peaks | Section 2.3 |
+| `e1_robustness.json` | Censored-station re-analysis (station 01 excluded), composite-weight sweep and the 4- vs 9-level normalisation check | Table S4 rows 4-5; Section 5.1 |
+| `e1_robustness.json` | Censored-station re-analysis (station 01 excluded), composite-weight sweep and the 4- vs 9-level normalisation check | Table S4 rows 4-5; Section 5.1 |
 | `water_balance_per_run.json` | Per-run 1D network water balance (overflow volume, number of flooding nodes) | Section 4.2 |
 
 The script and run identifier behind every reported number are listed in
